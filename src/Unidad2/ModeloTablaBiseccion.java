@@ -5,9 +5,9 @@ import javax.swing.table.AbstractTableModel;
 public class ModeloTablaBiseccion extends AbstractTableModel {
 
     private String[] columnas = {"i", "Xi", "Xs", "Xr", "Fxi", "Fxr", "Signo", "Error"};
-    private ArrayList<csFilaBiseccion> lista;
+    private ArrayList<IteracionBiseccion> lista;
 
-    public ModeloTablaBiseccion(ArrayList<csFilaBiseccion> lista) {
+    public ModeloTablaBiseccion(ArrayList<IteracionBiseccion> lista) {
         this.lista = lista;
     }
 

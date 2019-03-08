@@ -4,21 +4,21 @@ import java.util.ArrayList;
 
 public class csMetodos {
 
-    public ArrayList<csFilaBiseccion> Biseccion(double xi, double xs, double errorDeseado, int iteraciones) {
+    public ArrayList<IteracionBiseccion> Biseccion(double xi, double xs, double errorDeseado, int iteraciones) {
         double fxi, fxs;
         fxi = this.funcion(xi);
         fxs = this.funcion(xs);
         double errorCalculado = 1;
         double xanterior;
 
-        ArrayList<csFilaBiseccion> lista;
+        ArrayList<IteracionBiseccion> lista;
         int i = 1;
 
         if (fxi * fxs < 0) { //hay solución
-            lista = new ArrayList<csFilaBiseccion>();
+            lista = new ArrayList<IteracionBiseccion>();
 
             while (i <= iteraciones && errorCalculado > errorDeseado) {
-                csFilaBiseccion fila = new csFilaBiseccion();
+                IteracionBiseccion fila = new IteracionBiseccion();
                 fila.setI(i);
                 fila.setXi(xi);
                 fila.setXs(xs);

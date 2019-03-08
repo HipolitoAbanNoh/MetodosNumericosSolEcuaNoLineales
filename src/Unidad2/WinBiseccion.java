@@ -193,7 +193,7 @@ public class WinBiseccion extends javax.swing.JInternalFrame {
         int iteraciones = Integer.parseInt(this.txtIteraciones.getText().trim());
 
         csMetodos metodos = new csMetodos();
-        ArrayList<csFilaBiseccion> l = metodos.Biseccion(xi, xs, error, iteraciones);
+        ArrayList<IteracionBiseccion> l = metodos.Biseccion(xi, xs, error, iteraciones);
         Estado.setValue(100);
         ModeloTablaBiseccion m = new ModeloTablaBiseccion(l);
         this.TablaI.setModel(m);

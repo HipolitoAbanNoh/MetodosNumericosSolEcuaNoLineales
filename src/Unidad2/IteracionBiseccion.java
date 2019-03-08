@@ -1,15 +1,16 @@
 package Unidad2;
 
-public class csFilaBiseccion {
+public class IteracionBiseccion {
 
     private int i;
     private double xi;
     private double xs;
     private double xr;
     private double fxi;
-    private double fxr;
-    private double signo;
+    private double fxs;
+    private double fxr;    
     private double error;
+//private double signo;
 
     public int getI() {
         return i;
@@ -51,20 +52,20 @@ public class csFilaBiseccion {
         this.fxi = fxi;
     }
 
+    public double getFxs() {
+        return fxs;
+    }
+
+    public void setFxs(double fxs) {
+        this.fxs = fxs;
+    }
+
     public double getFxr() {
         return fxr;
     }
 
     public void setFxr(double fxr) {
         this.fxr = fxr;
-    }
-
-    public double getSigno() {
-        return signo;
-    }
-
-    public void setSigno(double signo) {
-        this.signo = signo;
     }
 
     public double getError() {
@@ -74,9 +75,10 @@ public class csFilaBiseccion {
     public void setError(double error) {
         this.error = error;
     }
+ 
 
     @Override
     public String toString() {
-        return "csFilaBiseccion{" + "i=" + i + ", xi=" + xi + ", xs=" + xs + ", xr=" + xr + ", fxi=" + fxi + ", fxr=" + fxr + ", signo=" + signo + ", error=" + error + '}';
+         return "IteracionBiseccion{" + "i=" + i + ", xi=" + xi + ", xs=" + xs + ", xr=" + xr + ", fxi=" + fxi + ", fxs=" + fxs + ", fxr=" + fxr + ", error=" + error + '}';
     }
 }
