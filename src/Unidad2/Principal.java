@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 public class Principal extends javax.swing.JFrame {
     WinBiseccion Unidad2Bi = new WinBiseccion();
-    VentanaPuntoFijo Unidad2B2 = new VentanaPuntoFijo();
+    
     
     public Principal() {
         initComponents();
