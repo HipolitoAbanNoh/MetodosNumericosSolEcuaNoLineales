@@ -5,26 +5,29 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 public class Principal extends javax.swing.JFrame {
+
     WinBiseccion Unidad2Bi = new WinBiseccion();
-    
-    
+    VentanaPuntoFIjo Unidad2PuntoFijo = new VentanaPuntoFIjo();
+
     public Principal() {
         initComponents();
         //this.setLayout(null);
-        this.setSize(1024,600);
+        this.setSize(1024, 600);
         this.setTitle("Metodo de Biseccion");
         //this.setResizable(false);
         this.setLocationRelativeTo(null);
-        	
+
         ImageIcon icono = new javax.swing.ImageIcon(getClass().getResource("/img/fondo.jpg"));
         Image imagen = icono.getImage();
-        ImageIcon iconoEscalado = new ImageIcon (imagen.getScaledInstance(1024,768,Image.SCALE_SMOOTH));
+        ImageIcon iconoEscalado = new ImageIcon(imagen.getScaledInstance(1024, 768, Image.SCALE_SMOOTH));
         fondoprincipal.setIcon(iconoEscalado);
     }
-    public Image getIconImage(){
+
+    public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("/img/itsva.png"));
         return retValue;
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -72,6 +75,11 @@ public class Principal extends javax.swing.JFrame {
 
         jCheckBoxMenuItem2.setSelected(true);
         jCheckBoxMenuItem2.setText("Punto Fijo");
+        jCheckBoxMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jCheckBoxMenuItem2);
 
         jMenu1.add(jMenu3);
@@ -99,19 +107,33 @@ public class Principal extends javax.swing.JFrame {
 
     private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
         // TODO add your handling code here:
-                //Error absoluto y error relativo
-            if (!desktopPane.isAncestorOf(Unidad2Bi)) {
+        //Mostrar Ventana Biseccion
+        if (!desktopPane.isAncestorOf(Unidad2Bi)) {
             int x = (desktopPane.getWidth() / 2) - (Unidad2Bi.getWidth() / 2);
             int y = (desktopPane.getHeight() / 2) - (Unidad2Bi.getHeight() / 2);
             desktopPane.add(Unidad2Bi);
             Unidad2Bi.toFront();
-            Unidad2Bi.setLocation(x , y + 50);
+            Unidad2Bi.setLocation(x, y + 50);
             Unidad2Bi.setVisible(true);
         } else {
             desktopPane.setSelectedFrame(Unidad2Bi);
         }
-            
     }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
+
+    private void jCheckBoxMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        //mostrar ventana Punto Fijo
+        if (!desktopPane.isAncestorOf(Unidad2PuntoFijo)) {
+            int x = (desktopPane.getWidth() / 2) - (Unidad2PuntoFijo.getWidth() / 2);
+            int y = (desktopPane.getHeight() / 2) - (Unidad2PuntoFijo.getHeight() / 2);
+            desktopPane.add(Unidad2PuntoFijo);
+            Unidad2PuntoFijo.toFront();
+            Unidad2PuntoFijo.setLocation(x, y + 50);
+            Unidad2PuntoFijo.setVisible(true);
+        } else {
+            desktopPane.setSelectedFrame(Unidad2PuntoFijo);
+        }
+    }//GEN-LAST:event_jCheckBoxMenuItem2ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
