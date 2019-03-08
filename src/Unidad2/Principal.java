@@ -1,6 +1,7 @@
 package Unidad2;
 
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 public class Principal extends javax.swing.JFrame {
@@ -9,17 +10,20 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         //this.setLayout(null);
-        this.setSize(800,600);
+        this.setSize(1024,600);
         this.setTitle("Metodo de Biseccion");
-        this.setResizable(false);
-        //this.setLocationRelativeTo(null);
+        //this.setResizable(false);
+        this.setLocationRelativeTo(null);
         	
         ImageIcon icono = new javax.swing.ImageIcon(getClass().getResource("/img/fondo.jpg"));
         Image imagen = icono.getImage();
-        ImageIcon iconoEscalado = new ImageIcon (imagen.getScaledInstance(800,600,Image.SCALE_SMOOTH));
+        ImageIcon iconoEscalado = new ImageIcon (imagen.getScaledInstance(1024,768,Image.SCALE_SMOOTH));
         fondoprincipal.setIcon(iconoEscalado);
     }
- 
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("/img/itsva.png"));
+        return retValue;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
