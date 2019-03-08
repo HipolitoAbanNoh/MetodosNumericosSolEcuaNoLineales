@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 
 public class Principal extends javax.swing.JFrame {
     WinBiseccion Unidad2Bi = new WinBiseccion();
+    VentanaPuntoFijo Unidad2B2 = new VentanaPuntoFijo();
     
     public Principal() {
         initComponents();
@@ -34,6 +35,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,11 +48,11 @@ public class Principal extends javax.swing.JFrame {
         desktopPane.setLayout(desktopPaneLayout);
         desktopPaneLayout.setHorizontalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondoprincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondoprincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondoprincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondoprincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
         );
 
         fondoprincipal.getAccessibleContext().setAccessibleName(""); // NOI18N
@@ -67,6 +69,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jCheckBoxMenuItem1);
+
+        jCheckBoxMenuItem2.setSelected(true);
+        jCheckBoxMenuItem2.setText("Punto Fijo");
+        jMenu3.add(jCheckBoxMenuItem2);
 
         jMenu1.add(jMenu3);
 
@@ -104,6 +110,7 @@ public class Principal extends javax.swing.JFrame {
         } else {
             desktopPane.setSelectedFrame(Unidad2Bi);
         }
+            
     }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
 
     public static void main(String args[]) {
@@ -142,6 +149,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JLabel fondoprincipal;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
