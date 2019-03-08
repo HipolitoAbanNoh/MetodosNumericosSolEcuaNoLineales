@@ -1,5 +1,7 @@
 package Unidad2;
 
+import java.util.ArrayList;
+
 public class VentanaPuntoFIjo extends javax.swing.JInternalFrame {
 
     public VentanaPuntoFIjo() {
@@ -67,6 +69,11 @@ public class VentanaPuntoFIjo extends javax.swing.JInternalFrame {
         jLabel4.setText("Iteraciones");
 
         jButton1.setText("Calcular");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -150,6 +157,22 @@ public class VentanaPuntoFIjo extends javax.swing.JInternalFrame {
     private void txtErrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtErrorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtErrorActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        double xo=Double.parseDouble(this.txtXo.getText().trim());
+        double error=Double.parseDouble(this.txtError.getText().trim());
+        int iteraciones=Integer.parseInt(this.txtIteraciones.getText().trim());
+        
+        
+        csMetodosPF met=new csMetodosPF();
+        ArrayList<csFilaPuntoFijo> l=met.PuntoFijo(xo, error,iteraciones);
+        
+        ModeloTablaPuntoFijo mpj = new ModeloTablaPuntoFijo(l);
+        
+        this.jTable2.setModel(mpj);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
