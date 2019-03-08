@@ -9,8 +9,9 @@ public class IteracionBiseccion {
     private double fxi;
     private double fxs;
     private double fxr;    
+    private double signo;
     private double error;
-//private double signo;
+
 
     public int getI() {
         return i;
@@ -66,6 +67,14 @@ public class IteracionBiseccion {
 
     public void setFxr(double fxr) {
         this.fxr = fxr;
+    }
+
+    public double getSigno() {
+        return signo;
+    }
+
+    public void setSigno(double signo) {
+        this.signo = signo;
     }
 
     public double getError() {

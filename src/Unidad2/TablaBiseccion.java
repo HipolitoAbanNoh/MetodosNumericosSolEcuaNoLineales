@@ -2,16 +2,16 @@ package Unidad2;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-public class ModeloTablaBiseccion extends AbstractTableModel {
+public class TablaBiseccion extends AbstractTableModel {
 
-    private String[] columnas = {"i", "Xi", "Xs", "Xr", "Fxi", "Fxr", "Signo", "Error"};
+    private String[] columnas = {"i", "Xi", "Xs", "Xr", "Fxi","Fxs", "Fxr", "Signo", "Error"};
     private ArrayList<IteracionBiseccion> lista;
 
-    public ModeloTablaBiseccion(ArrayList<IteracionBiseccion> lista) {
+    public TablaBiseccion(ArrayList<IteracionBiseccion> lista) {
         this.lista = lista;
     }
 
-    public ModeloTablaBiseccion() {
+    public TablaBiseccion() {
     }
 
     @Override
@@ -42,10 +42,12 @@ public class ModeloTablaBiseccion extends AbstractTableModel {
             case 4:
                 return this.lista.get(fila).getFxi();
             case 5:
-                return this.lista.get(fila).getFxr();
+                return this.lista.get(fila).getFxs();
             case 6:
-                return this.lista.get(fila).getSigno();
+                return this.lista.get(fila).getFxr();
             case 7:
+                return this.lista.get(fila).getSigno();
+            case 8:
                 return this.lista.get(fila).getError();
             default:
                 return null;

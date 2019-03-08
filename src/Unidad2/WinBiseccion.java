@@ -195,7 +195,7 @@ public class WinBiseccion extends javax.swing.JInternalFrame {
         csMetodos metodos = new csMetodos();
         ArrayList<IteracionBiseccion> l = metodos.Biseccion(xi, xs, error, iteraciones);
         Estado.setValue(100);
-        ModeloTablaBiseccion m = new ModeloTablaBiseccion(l);
+        TablaBiseccion m = new TablaBiseccion(l);
         this.TablaI.setModel(m);
 
     }//GEN-LAST:event_CalcularActionPerformed
