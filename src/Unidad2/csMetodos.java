@@ -25,7 +25,7 @@ public class csMetodos {
                 
                 fila.setFxr(this.funcion(fila.getXr()));
                 fila.setFxi(this.funcion(fila.getXi()));
-                fila.setFxs(this.funcion(fila.getXi()));
+                fila.setFxs(this.funcion(fila.getXs()));
 
                 fila.setSigno(fila.getFxi() * fila.getFxr());
 
