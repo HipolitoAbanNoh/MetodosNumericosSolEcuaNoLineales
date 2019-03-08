@@ -3,7 +3,6 @@ package Unidad2;
 import java.util.ArrayList;
 
 public class csMetodos {
-
     public ArrayList<IteracionBiseccion> Biseccion(double xi, double xs, double errorDeseado, int iteraciones) {
         double fxi, fxs;
         fxi = this.funcion(xi);
@@ -23,9 +22,10 @@ public class csMetodos {
                 fila.setXi(xi);
                 fila.setXs(xs);
                 fila.setXr((xi + xs) / 2);
-
+                
                 fila.setFxr(this.funcion(fila.getXr()));
                 fila.setFxi(this.funcion(fila.getXi()));
+                fila.setFxs(this.funcion(fila.getXi()));
 
                 fila.setSigno(fila.getFxi() * fila.getFxr());
 
