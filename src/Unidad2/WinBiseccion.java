@@ -1,6 +1,9 @@
 package Unidad2;
 
+import java.lang.*;
+import java.io.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 public class WinBiseccion extends javax.swing.JInternalFrame {
@@ -187,6 +190,7 @@ public class WinBiseccion extends javax.swing.JInternalFrame {
 
     private void CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcularActionPerformed
         // TODO add your handling code here:
+        try{
         double xi = Double.parseDouble(this.txtXi.getText().trim());
         double xs = Double.parseDouble(this.txtXs.getText().trim());
         double error = Double.parseDouble(this.txtError.getText().trim());
@@ -197,7 +201,19 @@ public class WinBiseccion extends javax.swing.JInternalFrame {
         Estado.setValue(100);
         TablaBiseccion m = new TablaBiseccion(l);
         this.TablaI.setModel(m);
-
+        }
+        catch(NullPointerException e){
+        /* System.out.println("haz ingresado un dato erroreo.");*/
+         JOptionPane.showMessageDialog(null,"haz ingresado un dato erroreo.");
+        }
+        catch(NumberFormatException e){
+          JOptionPane.showMessageDialog(null,"haz ingresado un dato erroreo.");  
+        }
+        finally{
+            /* System.out.println("intenta de nuevo");*/
+             JOptionPane.showMessageDialog(null,"intenta de nuevo");
+             
+        }
     }//GEN-LAST:event_CalcularActionPerformed
 
     public static void main(String args[]) {
