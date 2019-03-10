@@ -6,7 +6,7 @@ public class VentanaNewton extends javax.swing.JInternalFrame {
     public VentanaNewton() {
         initComponents();
         //this.setLayout(null);
-        this.setTitle("Metodo de Biseccion");
+        this.setTitle("Metodo de Newton");
         this.setResizable(false);
         this.setClosable(true);
         this.setIconifiable(true);

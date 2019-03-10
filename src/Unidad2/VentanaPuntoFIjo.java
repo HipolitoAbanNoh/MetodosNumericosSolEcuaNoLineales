@@ -7,7 +7,7 @@ public class VentanaPuntoFIjo extends javax.swing.JInternalFrame {
     public VentanaPuntoFIjo() {
         initComponents();
         //this.setLayout(null);
-        this.setTitle("Metodo de Biseccion");
+        this.setTitle("Metodo de Punto Fijo");
         this.setResizable(false);
         this.setClosable(true);
         this.setIconifiable(true);
