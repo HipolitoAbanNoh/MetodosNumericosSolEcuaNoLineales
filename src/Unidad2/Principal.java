@@ -8,6 +8,7 @@ public class Principal extends javax.swing.JFrame {
 
     WinBiseccion Unidad2Bi = new WinBiseccion();
     VentanaPuntoFIjo Unidad2PuntoFijo = new VentanaPuntoFIjo();
+    VentanaNewton VNewton = new VentanaNewton();
 
     public Principal() {
         initComponents();
@@ -39,6 +40,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
+        Newton = new javax.swing.JCheckBoxMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,6 +83,15 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jCheckBoxMenuItem2);
+
+        Newton.setSelected(true);
+        Newton.setText("Metodo Newton");
+        Newton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewtonActionPerformed(evt);
+            }
+        });
+        jMenu3.add(Newton);
 
         jMenu1.add(jMenu3);
 
@@ -135,6 +146,20 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jCheckBoxMenuItem2ActionPerformed
 
+    private void NewtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewtonActionPerformed
+        // TODO add your handling code here:
+        if (!desktopPane.isAncestorOf(VNewton)) {
+            int x = (desktopPane.getWidth() / 2) - (VNewton.getWidth() / 2);
+            int y = (desktopPane.getHeight() / 2) - (VNewton.getHeight() / 2);
+            desktopPane.add(VNewton);
+            VNewton.toFront();
+            VNewton.setLocation(x, y + 50);
+            VNewton.setVisible(true);
+        } else {
+            desktopPane.setSelectedFrame(VNewton);
+        }
+    }//GEN-LAST:event_NewtonActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -168,6 +193,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBoxMenuItem Newton;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JLabel fondoprincipal;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
