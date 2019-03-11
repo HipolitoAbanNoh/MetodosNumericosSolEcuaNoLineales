@@ -1,6 +1,7 @@
 package Unidad2;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class VentanaPuntoFIjo extends javax.swing.JInternalFrame {
 
@@ -66,6 +67,12 @@ public class VentanaPuntoFIjo extends javax.swing.JInternalFrame {
         });
 
         jLabel4.setText("Iteraciones");
+
+        txtIteraciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIteracionesActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Calcular");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -162,8 +169,9 @@ public class VentanaPuntoFIjo extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        try{
         double xo=Double.parseDouble(this.txtXo.getText().trim());
+        
         double error=Double.parseDouble(this.txtError.getText().trim());
         int iteraciones=Integer.parseInt(this.txtIteraciones.getText().trim());
         
@@ -173,7 +181,23 @@ public class VentanaPuntoFIjo extends javax.swing.JInternalFrame {
         ModeloTablaPuntoFijo mpj = new ModeloTablaPuntoFijo(l);
         
         this.jTable2.setModel(mpj);
+        }
+        catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null,"Datos no validos");
+        }catch(NumberFormatException e){
+          JOptionPane.showMessageDialog(null,"Numero fuera de rango o invalido");  
+        }
+        finally{
+            
+             JOptionPane.showMessageDialog(null,"Calculo realizado");
+             
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtIteracionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIteracionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIteracionesActionPerformed
 
     /**
      * @param args the command line arguments

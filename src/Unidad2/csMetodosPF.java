@@ -15,7 +15,7 @@ public class csMetodosPF {
         
         lista = new ArrayList<csFilaPuntoFijo>();
         
-        while (i < iteraciones && errorCalculado > errorDeseado) {
+        while (i <= iteraciones && errorCalculado > errorDeseado) {
            
             csFilaPuntoFijo fila = new csFilaPuntoFijo();
             fila.setI(i);
