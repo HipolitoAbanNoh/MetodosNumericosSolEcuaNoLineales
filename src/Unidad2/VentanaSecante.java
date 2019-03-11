@@ -1,9 +1,16 @@
 package Unidad2;
 
+import java.util.ArrayList;
+
 public class VentanaSecante extends javax.swing.JInternalFrame {
 
     public VentanaSecante() {
         initComponents();
+        this.setTitle("Metodo Secante");
+        this.setResizable(false);
+        this.setClosable(true);
+        this.setIconifiable(true);
+        this.setMaximizable(false);
     }
 
     @SuppressWarnings("unchecked")

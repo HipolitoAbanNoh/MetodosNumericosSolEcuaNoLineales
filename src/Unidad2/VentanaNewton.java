@@ -28,7 +28,6 @@ public class VentanaNewton extends javax.swing.JInternalFrame {
 
         setTitle("Metodo 3");
 
-        jPanel1.setBackground(new java.awt.Color(153, 102, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos de entrada"));
 
         jLabel1.setText("Xi");
@@ -115,7 +114,7 @@ public class VentanaNewton extends javax.swing.JInternalFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
