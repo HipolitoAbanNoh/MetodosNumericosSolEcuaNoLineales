@@ -165,7 +165,6 @@ public class VentanaPuntoFIjo extends javax.swing.JInternalFrame {
         double error=Double.parseDouble(this.txtError.getText().trim());
         int iteraciones=Integer.parseInt(this.txtIteraciones.getText().trim());
         
-        
         csMetodosPF met=new csMetodosPF();
         ArrayList<csFilaPuntoFijo> l=met.PuntoFijo(xo, error,iteraciones);
         

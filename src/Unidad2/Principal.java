@@ -9,6 +9,8 @@ public class Principal extends javax.swing.JFrame {
     WinBiseccion Unidad2Bi = new WinBiseccion();
     VentanaPuntoFIjo Unidad2PuntoFijo = new VentanaPuntoFIjo();
     VentanaNewton VNewton = new VentanaNewton();
+    VentanaSecante Unidad2Sec = new VentanaSecante(); 
+ 
 
     public Principal() {
         initComponents();
@@ -41,6 +43,7 @@ public class Principal extends javax.swing.JFrame {
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
         Newton = new javax.swing.JCheckBoxMenuItem();
+        jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,13 +88,22 @@ public class Principal extends javax.swing.JFrame {
         jMenu3.add(jCheckBoxMenuItem2);
 
         Newton.setSelected(true);
-        Newton.setText("Metodo Newton");
+        Newton.setText("Método Newton");
         Newton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NewtonActionPerformed(evt);
             }
         });
         jMenu3.add(Newton);
+
+        jCheckBoxMenuItem3.setSelected(true);
+        jCheckBoxMenuItem3.setText("Método Secante");
+        jCheckBoxMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jCheckBoxMenuItem3);
 
         jMenu1.add(jMenu3);
 
@@ -160,6 +172,22 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_NewtonActionPerformed
 
+    private void jCheckBoxMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem3ActionPerformed
+        // TODO add your handling code here:
+                if (!desktopPane.isAncestorOf(Unidad2Sec)) {
+            int x = (desktopPane.getWidth() / 2) - (Unidad2Sec.getWidth() / 2);
+            int y = (desktopPane.getHeight() / 2) - (Unidad2Sec.getHeight() / 2);
+            desktopPane.add(Unidad2Sec);
+            Unidad2Sec.toFront();
+            Unidad2Sec.setLocation(x, y + 50);
+            Unidad2Sec.setVisible(true);
+        } else {
+            desktopPane.setSelectedFrame(Unidad2Sec);
+        }
+        
+        
+    }//GEN-LAST:event_jCheckBoxMenuItem3ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -198,6 +226,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel fondoprincipal;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
