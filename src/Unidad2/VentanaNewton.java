@@ -1,5 +1,6 @@
 package Unidad2;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 public class VentanaNewton extends javax.swing.JInternalFrame {
     
     
@@ -122,7 +123,7 @@ public class VentanaNewton extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        try {
         double xi=Double.parseDouble(this.txtXi.getText().trim());
         double error=Double.parseDouble(this.txtError.getText().trim());
         
@@ -131,6 +132,11 @@ public class VentanaNewton extends javax.swing.JInternalFrame {
         
         ModeloTablaNewton mn= new ModeloTablaNewton(l); 
         this.jTable2.setModel(mn);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Error en la generacion de la tabla");
+        }finally{
+            JOptionPane.showMessageDialog(null,"Proceso terminado");
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
