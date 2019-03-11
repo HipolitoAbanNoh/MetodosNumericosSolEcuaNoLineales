@@ -1,6 +1,7 @@
 package Unidad2;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class VentanaSecante extends javax.swing.JInternalFrame {
 
@@ -83,9 +84,9 @@ public class VentanaSecante extends javax.swing.JInternalFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(txtError, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(29, 29, 29)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,6 +138,7 @@ public class VentanaSecante extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        try{
         double x1=Double.parseDouble(this.txtx0.getText().trim());
         double x2=Double.parseDouble(this.txtx1.getText().trim());
         double error=Double.parseDouble(this.txtError.getText().trim());
@@ -146,6 +148,11 @@ public class VentanaSecante extends javax.swing.JInternalFrame {
 
         ModeloTablaSecante m= new ModeloTablaSecante(l);
         this.jTable2.setModel(m);
+        }catch(Exception i){
+            JOptionPane.showMessageDialog(null,"Variables no validos");
+        }finally{
+            JOptionPane.showMessageDialog(null,"Calulos realizados");
+        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
